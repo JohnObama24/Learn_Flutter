@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'about.dart';
+
 void main() {
-  runApp(const MaterialApp(
-    home: Home(),
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => const Home(),
+      '/about': (context) => const About(),
+    },
   ));
 }
-
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,7 +20,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('John Obama'),
         centerTitle: true,
-        backgroundColor: Colors.white24,
+        backgroundColor: Colors.white70,
       ),
       body: Column(
         children: [
@@ -32,12 +37,18 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 30.0,),
+          const SizedBox(height: 30.0),
           const Text('Welcome to John Obama\'s official Porto app!'),
-          const SizedBox(height: 10.0,),
+          const SizedBox(height: 10.0),
           const Text('SaYA Cinta Flutter dan Javascript'),
-          const SizedBox(height: 10.0,),
-          const Text('He has been a member of Congress since 19')
+          const SizedBox(height: 10.0),
+          const Text('He has been a member of Congress since 19'),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/about');
+            },
+            child: const Text('About me'),
+          ),
         ],
       ),
     );
