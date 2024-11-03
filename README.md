@@ -1,4 +1,4 @@
-#Curently Learning
+#Curently Learning ("susah juga bjir")
 
 
 
